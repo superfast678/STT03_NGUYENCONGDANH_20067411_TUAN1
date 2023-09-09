@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gymnastics Competition</title>
+</head>
+<body>
+    <script>
+        
+        const dolphinsScores = [96, 108, 89];
+        const koalasScores = [88, 91, 110];
+
+       
+        const calculateAverage = (scores) => {
+            const sum = scores.reduce((total, score) => total + score, 0);
+            return sum / scores.length;
+        };
+
+        const dolphinsAverage = calculateAverage(dolphinsScores);
+        const koalasAverage = calculateAverage(koalasScores);
+
+        
+        const minScore = 100;
+
+        
+        if (dolphinsAverage > koalasAverage && dolphinsAverage >= minScore) {
+            document.write(`Dolphins win with an average score of ${dolphinsAverage}`);
+        } else if (koalasAverage > dolphinsAverage && koalasAverage >= minScore) {
+            document.write(`Koalas win with an average score of ${koalasAverage}`);
+        } else if (dolphinsAverage === koalasAverage && dolphinsAverage >= minScore && koalasAverage >= minScore) {
+            document.write("It's a draw!");
+        } else {
+            document.write("No one wins the trophy.");
+        }
+    </script>
+</body>
+</html>

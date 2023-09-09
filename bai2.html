@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BMI Calculator</title>
+</head>
+
+<body>
+    <h1>BMI Calculator</h1>
+    <script>
+      
+        const markMass = 78; 
+        const markHeight = 1.69; 
+
+       
+        const johnMass = 92; 
+        const johnHeight = 1.95; 
+
+        
+        const bmiMark = markMass / (markHeight ** 2);
+        const bmiJohn = johnMass / (johnHeight ** 2);
+
+        
+        let resultMessage;
+        if (bmiMark > bmiJohn) {
+            resultMessage = `Mark's BMI (${bmiMark.toFixed(2)}) is higher than John's BMI (${bmiJohn.toFixed(2)})!`;
+        } else if (bmiJohn > bmiMark) {
+            resultMessage = `John's BMI (${bmiJohn.toFixed(2)}) is higher than Mark's BMI (${bmiMark.toFixed(2)})!`;
+        } else {
+            resultMessage = "Mark and John have the same BMI.";
+        }
+
+        
+        const resultParagraph = document.createElement("p");
+        resultParagraph.textContent = resultMessage;
+        document.body.appendChild(resultParagraph);
+    </script>
+</body>
+
+</html>
